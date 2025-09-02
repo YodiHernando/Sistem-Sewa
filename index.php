@@ -18,6 +18,8 @@ $query = mysqli_query($koneksi, "SELECT * FROM jenis_barang ORDER BY jenis_baran
             <th>ID</th>
             <th>Jenis Barang</th>
             <th>Keterangan</th>
+            <th>Aksi</th>
+            <th>Hapus</th>
         </tr>
         <?php
         while ($data = mysqli_fetch_array($query)) {
@@ -25,6 +27,8 @@ $query = mysqli_query($koneksi, "SELECT * FROM jenis_barang ORDER BY jenis_baran
             <td>$data[id_jenis]</td>
             <td>$data[jenis_barang]</td>
             <td>$data[keterangan]</td>
+            <td><a href='edit_jenis_barang.php?id=$data[id_jenis]'>Edit</td>
+            <td><a href='hapus.php?id=$data[id_jenis]'>Hapus</td>
             </tr>";
         }
         ?>
